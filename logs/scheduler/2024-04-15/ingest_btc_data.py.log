@@ -446,3 +446,31 @@
 [2024-04-15T00:18:06.674+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:18:06.673+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-04-15T00:18:06.692+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:18:06.692+0000] {dag.py:3954} INFO - Setting next_dagrun for ingest_btc_data to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
 [2024-04-15T00:18:06.707+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_btc_data.py took 0.085 seconds
+[2024-04-15T00:18:36.906+0000] {processor.py:161} INFO - Started process (PID=2256) to work on /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:18:36.907+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_btc_data.py for tasks to queue
+[2024-04-15T00:18:36.908+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:18:36.908+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:18:36.936+0000] {processor.py:840} INFO - DAG(s) 'ingest_btc_data' retrieved from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:18:36.956+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:18:36.956+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-15T00:18:36.976+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:18:36.975+0000] {dag.py:3954} INFO - Setting next_dagrun for ingest_btc_data to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-15T00:18:36.991+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_btc_data.py took 0.088 seconds
+[2024-04-15T00:19:07.176+0000] {processor.py:161} INFO - Started process (PID=2264) to work on /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:07.177+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_btc_data.py for tasks to queue
+[2024-04-15T00:19:07.177+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:07.177+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:07.204+0000] {processor.py:840} INFO - DAG(s) 'ingest_btc_data' retrieved from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:07.224+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:07.223+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-15T00:19:07.243+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:07.243+0000] {dag.py:3954} INFO - Setting next_dagrun for ingest_btc_data to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-15T00:19:07.261+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_btc_data.py took 0.089 seconds
+[2024-04-15T00:19:37.364+0000] {processor.py:161} INFO - Started process (PID=2272) to work on /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:37.365+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_btc_data.py for tasks to queue
+[2024-04-15T00:19:37.366+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:37.366+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:37.394+0000] {processor.py:840} INFO - DAG(s) 'ingest_btc_data' retrieved from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:19:37.414+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:37.414+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-15T00:19:37.436+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:19:37.436+0000] {dag.py:3954} INFO - Setting next_dagrun for ingest_btc_data to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-15T00:19:37.453+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_btc_data.py took 0.093 seconds
+[2024-04-15T00:20:07.640+0000] {processor.py:161} INFO - Started process (PID=2280) to work on /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:20:07.641+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_btc_data.py for tasks to queue
+[2024-04-15T00:20:07.642+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:20:07.642+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:20:07.668+0000] {processor.py:840} INFO - DAG(s) 'ingest_btc_data' retrieved from /opt/airflow/dags/ingest_btc_data.py
+[2024-04-15T00:20:07.691+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:20:07.691+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-15T00:20:07.709+0000] {logging_mixin.py:188} INFO - [2024-04-15T00:20:07.709+0000] {dag.py:3954} INFO - Setting next_dagrun for ingest_btc_data to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-15T00:20:07.725+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_btc_data.py took 0.089 seconds
