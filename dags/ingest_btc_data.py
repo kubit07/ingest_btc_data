@@ -1,10 +1,14 @@
 from airflow import DAG
 from datetime import datetime, timedelta
 from airflow.sensors.http_sensor import HttpSensor
+from airflow.operators.python_operator import PythonOperator
 from airflow.providers.http.operators.http import SimpleHttpOperator
 from airflow.operators.mysql_operator import MySqlOperator
 from airflow.operators.postgres_operator import PostgresOperator
+from airflow.hooks.mysql_hook import MySqlHook 
 
+
+import pandas as pd
 
 default_args = {
     "owner": "airflow",
@@ -26,7 +30,27 @@ def save_bitcoins_data(response):
         file.write(response)
     return True
 
-    
+""" def insert_post_mysql_hook():
+    mysql_hook = MySqlHook(mysql_conn_id='mysqlcon', schema='db')
+    with open('/opt/airflow/dags/post.json') as f:
+        data=f.read()
+        djson=json.loads(data)
+        postlist=[]
+        for items in djson:
+            postlist.append((items['id'],items['title']))
+        target_fields = ['post_id', 'title']
+        mysql_hook.insert_rows(table='Post', rows=postlist, target_fields=target_fields) """
+
+def insert_post_mysql_hook():
+    target_fields = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'volume']
+    postlist=[]
+    mysql_hook = MySqlHook(mysql_conn_id='mysqlcon', schema='db')
+    # Read the CSV file
+    df_ingest_btc_data = pd.read_csv("/opt/airflow/dags/btc_eur_data.csv")
+    for index, row in df_ingest_btc_data.iterrows():
+        postlist.append((row['Date'],row['Open'], row['High'], row['Low'], row['Close'], row['Adj Close'], row['Volume']))
+    mysql_hook.insert_rows(table='t_btc_eur', rows=postlist, target_fields=target_fields)    
+
 with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@daily',
          start_date=datetime(2024, 4, 14), default_args=default_args, catchup=False) as dag:
     
@@ -53,6 +77,9 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
         task_id="create_table_btc_eur_mysql",
         mysql_conn_id="mysqlcon",
         sql=r"""
+
+            DROP TABLE IF EXISTS t_btc_eur;
+            
             CREATE TABLE IF NOT EXISTS t_btc_eur(
             id_btc_eur INT AUTO_INCREMENT,
             date DATE,
@@ -61,7 +88,7 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
             low DOUBLE,
             close DOUBLE,
             adj_close DOUBLE,
-            volume MEDIUMINT,
+            volume BIGINT,
             PRIMARY KEY (id_btc_eur)
         );
         """
@@ -82,6 +109,11 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
             volume SMALLINT
         );
         """
+    )
+
+    insert_post_mysql_task = PythonOperator(
+        task_id='insert_post_mysql_task',
+        python_callable=insert_post_mysql_hook
     )
 
     
