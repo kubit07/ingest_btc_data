@@ -76,10 +76,6 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
         timeout=20
     )
 
-
-
-
-
     get_bitcoins_data = SimpleHttpOperator(
         task_id="get_bitcoins_data",
         http_conn_id="githubcon",
