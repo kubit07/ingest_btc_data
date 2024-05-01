@@ -1,0 +1,42 @@
+[2024-04-25T14:19:51.302+0000] {processor.py:161} INFO - Started process (PID=29) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:19:51.303+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:19:51.306+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:19:51.305+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:19:51.333+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:19:51.383+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:19:51.383+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:19:51.429+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:19:51.428+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:19:51.462+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.165 seconds
+[2024-04-25T14:20:21.953+0000] {processor.py:161} INFO - Started process (PID=37) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:21.955+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:20:21.965+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:21.963+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:22.030+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:22.084+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:22.084+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:20:22.130+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:22.130+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:20:22.153+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.225 seconds
+[2024-04-25T14:20:52.289+0000] {processor.py:161} INFO - Started process (PID=46) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:52.290+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:20:52.292+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:52.292+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:52.315+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:20:52.336+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:52.335+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:20:52.361+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:20:52.360+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:20:52.378+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.095 seconds
+[2024-04-25T14:21:22.566+0000] {processor.py:161} INFO - Started process (PID=55) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:22.567+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:21:22.569+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:22.568+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:22.588+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:22.607+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:22.606+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:21:22.626+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:22.626+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:21:22.642+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.081 seconds
+[2024-04-25T14:21:52.825+0000] {processor.py:161} INFO - Started process (PID=64) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:52.826+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:21:52.828+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:52.828+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:52.846+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:21:52.866+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:52.865+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:21:52.886+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:21:52.886+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:21:52.903+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.083 seconds
+[2024-04-25T14:37:02.548+0000] {processor.py:161} INFO - Started process (PID=30) to work on /opt/airflow/dags/bashexample.py
+[2024-04-25T14:37:02.550+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/bashexample.py for tasks to queue
+[2024-04-25T14:37:02.551+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:37:02.551+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:37:02.584+0000] {processor.py:840} INFO - DAG(s) 'bash_dag_example' retrieved from /opt/airflow/dags/bashexample.py
+[2024-04-25T14:37:02.621+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:37:02.621+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-25T14:37:02.654+0000] {logging_mixin.py:188} INFO - [2024-04-25T14:37:02.654+0000] {dag.py:3954} INFO - Setting next_dagrun for bash_dag_example to 2024-04-25 00:00:00+00:00, run_after=2024-04-26 00:00:00+00:00
+[2024-04-25T14:37:02.678+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/bashexample.py took 0.135 seconds

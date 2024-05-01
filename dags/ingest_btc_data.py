@@ -7,6 +7,7 @@ from airflow.operators.mysql_operator import MySqlOperator
 from airflow.operators.postgres_operator import PostgresOperator
 from airflow.hooks.mysql_hook import MySqlHook 
 from airflow.hooks.postgres_hook import PostgresHook 
+from yahoo_fin.stock_info import get_data
 
 
 import pandas as pd
@@ -74,6 +75,10 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
         poke_interval=5,
         timeout=20
     )
+
+
+
+
 
     get_bitcoins_data = SimpleHttpOperator(
         task_id="get_bitcoins_data",
