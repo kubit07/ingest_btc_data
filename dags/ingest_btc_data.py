@@ -27,10 +27,18 @@ def chek_github_data(response):
     else:
         return False
 
+
 def save_bitcoins_data(response):
     with open('/opt/airflow/dags/btc_eur_data.csv', mode='w') as file:
         file.write(response)
     return True
+
+
+def get_bitcoins_data_yahoo(ti):
+    bitcoin_eur_day = get_data("BTC-EUR", start_date="04/15/2023", end_date="05/01/2024", index_as_date = True, interval="1d")
+    bitcoin_eur_day.to_csv('opt/airflow/dags/btc_eur_data_yahoo_api.csv', index=False)  
+
+
 
 """ def insert_post_mysql_hook():
     mysql_hook = MySqlHook(mysql_conn_id='mysqlcon', schema='db')
@@ -43,6 +51,7 @@ def save_bitcoins_data(response):
         target_fields = ['post_id', 'title']
         mysql_hook.insert_rows(table='Post', rows=postlist, target_fields=target_fields) """
 
+
 def insert_post_mysql_hook():
     target_fields = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'volume']
     postlist=[]
@@ -52,6 +61,7 @@ def insert_post_mysql_hook():
     for index, row in df_ingest_btc_data.iterrows():
         postlist.append((row['Date'],row['Open'], row['High'], row['Low'], row['Close'], row['Adj Close'], row['Volume']))
     mysql_hook.insert_rows(table='t_btc_eur', rows=postlist, target_fields=target_fields)    
+
 
 def insert_post_postgres_hook():
     target_fields = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'volume']
@@ -76,13 +86,23 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
         timeout=20
     )
 
-    get_bitcoins_data = SimpleHttpOperator(
-        task_id="get_bitcoins_data",
+    get_bitcoins_data_github = SimpleHttpOperator(
+        task_id="get_bitcoins_data_github",
         http_conn_id="githubcon",
         endpoint="kubit07/ingest_btc_data/kubit/btc_eur_data.csv",
         method="GET",
         response_filter=lambda response: save_bitcoins_data(response.text),
         log_response = True
+    )
+
+    get_bitcoins_data_yahoo_fin = PythonOperator(
+        task_id="get_bitcoins_data_yahoo_fin",
+        python_callable=get_bitcoins_data_yahoo
+    )
+
+    save_bitcoin_data_from_yahoo_api = PythonOperator(
+        task_id="save_bitcoin_data_from_yahoo_api",
+        python_callable=save_btc_data_api_yahoo
     )
 
     create_table_msql = MySqlOperator(
@@ -135,7 +155,7 @@ with DAG('ingest_btc_data', description='Bitcoins Data Ingestion', schedule='@da
         task_id='insert_post_postgres_task',
         python_callable=insert_post_postgres_hook
     )
-    
+
 
 
 
